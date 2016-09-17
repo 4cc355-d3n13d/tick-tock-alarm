@@ -1,0 +1,137 @@
+
+	/* General */
+	html {
+		background: none !important;
+	}
+	.main-container {
+		position: absolute;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		/*height: 125%;*/
+		background: radial-gradient(ellipse at bottom, #1c2837 0%, #050608 100%) !important;
+	}
+	#clock {
+		border-radius: 3px;
+		-webkit-box-shadow: 0px 0px 10px 0px rgba(38,45,55,1);
+		-moz-box-shadow: 0px 0px 10px 0px rgba(38,45,55,1);
+		box-shadow: 0px 0px 10px 0px rgba(38,45,55,1);
+		opacity: 0.95;
+		z-index: 10;
+	}
+	.button-holder {
+		width: 100%;
+		position: absolute;
+		bottom: 15%;
+	}
+	/* * /
+	.pluto {
+		margin-left: -390px !important;
+		margin-top: -390px !important;
+	} /* */
+
+	#timer-dialog span,
+	#alarm-dialog span {
+		font-size: 1.25em;
+		display: inline-block;
+	}
+
+
+	/* Weather Animation  */
+	.weather-container { opacity: 0; z-index: 15; }
+	.weather-container .icon_moon_0,
+	.weather-container .icon_moon_16 { background-image:url(../img/yamoon/state_0_16.svg); }
+	.weather-container .icon_moon_1 { background-image:url(../img/yamoon/state_1.svg); }
+	.weather-container .icon_moon_2 { background-image:url(../img/yamoon/state_2.svg); }
+	.weather-container .icon_moon_3,
+	.weather-container .icon_moon_4 { background-image:url(../img/yamoon/state_3_4.svg); }
+	.weather-container .icon_moon_5 { background-image:url(../img/yamoon/state_5.svg); }
+	.weather-container .icon_moon_6 { background-image:url(../img/yamoon/state_6.svg); }
+	.weather-container .icon_moon_7 { background-image:url(../img/yamoon/state_7.svg); }
+	.weather-container .icon_moon_8 { background-image:url(../img/yamoon/state_8.svg); }
+	.weather-container .icon_moon_9 { background-image:url(../img/yamoon/state_9.svg); }
+	.weather-container .icon_moon_10 { background-image:url(../img/yamoon/state_10.svg); }
+	.weather-container .icon_moon_11 { background-image:url(../img/yamoon/state_11.svg); }
+	.weather-container .icon_moon_12 { background-image:url(../img/yamoon/state_12.svg); }
+	.weather-container .icon_moon_13 { background-image:url(../img/yamoon/state_13.svg); }
+	.weather-container .icon_moon_14 { background-image:url(../img/yamoon/state_14.svg); }
+	.weather-container .icon_moon_15 { background-image:url(../img/yamoon/state_15.svg); }
+	.weather-container .moon_state { width: 80px; height: 80px; display: inline-block; }
+	.weather-container .moon_state {
+		/*position: relative;*/
+		/*top: -250px;*/
+		/*right: -120px;*/
+		position: absolute;
+		top: -35%;
+		right: 35%;
+		opacity: 0.55;
+	}
+
+
+
+	/* Alarm Video Container */
+	.video-holder {
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 125px;
+		height: 100%;
+		z-index: 99999;
+		text-align: center;
+		background: #000;
+		/*padding: 5px;*/
+	}
+	.video-holder button {
+		background: rgba(15, 15, 15, 1);
+		border: none;
+
+		font-family: Trebuchet MS;
+		font-size: 4em;
+		color: rgba(218, 218, 218, 1);
+		text-decoration: underline;
+
+		cursor: pointer;
+
+		padding: 15px 0px;
+		height: 30%;
+		width: 100%;
+		margin: 0px auto;
+
+		outline: none;
+	}
+	.video-holder button:hover {
+		text-decoration: none;
+	}
+
+
+
+
+
+	.video-holder button.dismiss {
+		position, fixed;
+		left, 0px;
+		bottom, 0px;
+		z-index, 1;
+		font-size, 2em;
+		height', 15%;
+	}
+
+
+
+	.video-holder button.dismiss {
+		/*border: 1px solid #808080;*/
+		/*background: #C0C0C0;*/
+		/*font-family: Trebuchet MS;*/
+		/*font-size: 4em;*/
+		/*text-decoration: underline;*/
+	}
+	.video-holder button.dismiss {
+		/*padding: 5px 0px;*/
+		/*height: 28%;*/
+	}
+	.video-holder button.dismiss {
+		/*display: none;*/
+	}

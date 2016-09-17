@@ -1,0 +1,397 @@
+
+
+	/*
+
+		Pretty slideout menu examples:
+		  - https://mango.github.io/slideout/
+
+	*/
+
+	.slideout-menu h2 {
+		margin: 0;
+		padding: 1em;
+		color: rgba(0,0,0,0.4);
+		text-shadow: 0 0 1px rgba(0,0,0,0.1);
+		font-weight: 300;
+		font-size: 2em;
+	}
+	.slideout-menu {
+		position: fixed;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 0;
+		width: 256px;
+		width: 333px;
+		/*width: 5%;*/
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		display: none;
+		background: #336ca6;
+	}
+
+	.slideout-panel {
+		position:relative;
+		z-index: 1;
+	}
+
+	.slideout-open,
+	.slideout-open body,
+	.slideout-open .slideout-panel {
+		overflow: hidden;
+	}
+
+	.slideout-open .slideout-menu {
+		display: block;
+	}
+
+
+
+
+
+
+/* =============================================================================
+  DEMO STUFF
+============================================================================= */
+.demo-title {
+  margin-bottom: 24px;
+  color: #ff9650;
+  font-size: 28px;
+}
+
+.itemsx {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.item {
+  margin: 12px;
+}
+
+
+
+
+/* =============================================================================
+  MENU TOGGLE SWITCHES
+============================================================================= */
+/**
+ * Toggle Switch Globals
+ *
+ * All switches should take on the class `cmn-toggle-switch` as well as their
+ * variant that will give them unique properties. This class is an overview
+ * class that acts as a reset for all versions of the icon.
+ */
+.cmn-toggle-switch {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 108px;
+  width: 58px;
+  height: 96px;
+  height: 48px;
+  font-size: 0;
+  text-indent: -9999px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: background 0.3s;
+  -webkit-transition: background 0.15s;
+          transition: background 0.3s;
+          transition: background 0.15s;
+  border-radius: 5px;
+}
+
+.cmn-toggle-switch:focus {
+  outline: none;
+}
+
+.cmn-toggle-switch span {
+  display: block;
+  position: absolute;
+  top: 45px;
+  top: 22px;
+  left: 18px;
+  left: 9px;
+  right: 18px;
+  right: 9px;
+  height: 5px;
+  background: white;
+}
+
+.cmn-toggle-switch span::before,
+.cmn-toggle-switch span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  content: "";
+}
+
+.cmn-toggle-switch span::before {
+  top: -12px;
+}
+
+.cmn-toggle-switch span::after {
+  bottom: -12px;
+}
+
+/**
+ * Style 1
+ *
+ * Rotating hamburger icon (rot), that simply rotates 90 degrees when activated.
+ * Nothing too fancy, simple transition.
+ */
+.cmn-toggle-switch__rot {
+  background-color: #28aadc;
+}
+
+.cmn-toggle-switch__rot span {
+  -webkit-transition: -webkit-transform 0.3s;
+          transition: transform 0.3s;
+}
+
+/* active state, i.e. menu open */
+.cmn-toggle-switch__rot.active {
+  background-color: #166888;
+}
+
+.cmn-toggle-switch__rot.active span {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+
+
+
+/**
+ * Style 2
+ * 
+ * Hamburger to "x" (mini). Takes on a hamburger shape, bars slide
+ * down to center and transform into an "x".
+ */
+.cmn-toggle-switch,
+.cmn-toggle-switch__mini {
+  background-color: #ff3264;
+  background-color: #166888;
+}
+.cmn-toggle-switch:hover,
+.cmn-toggle-switch__mini:hover {
+  background-color: #ff3264;
+  background-color: #28aadc;
+}
+
+.cmn-toggle-switch__mini span {
+  -webkit-transition: background 0 0.3s;
+          transition: background 0 0.3s;
+}
+
+.cmn-toggle-switch__mini span::before,
+.cmn-toggle-switch__mini span::after {
+  -webkit-transition-duration: 0.3s, 0.3s;
+          transition-duration: 0.3s, 0.3s;
+  -webkit-transition-delay: 0.3s, 0;
+          transition-delay: 0.3s, 0;
+}
+
+.cmn-toggle-switch__mini span::before {
+  -webkit-transition-property: top, -webkit-transform;
+          transition-property: top, transform;
+}
+
+.cmn-toggle-switch__mini span::after {
+  -webkit-transition-property: bottom, -webkit-transform;
+          transition-property: bottom, transform;
+}
+
+/* active state, i.e. menu open */
+.cmn-toggle-switch.active,
+.cmn-toggle-switch__mini.active {
+  background-color: #cb0032;
+  background-color: #166888;
+  background-color: #28aadc;
+  background-color: #166888;
+}
+
+.cmn-toggle-switch.active:hover,
+.cmn-toggle-switch__mini.active:hover {
+  background-color: #28aadc;
+}
+
+.cmn-toggle-switch__mini.active span {
+  background: none;
+}
+
+.cmn-toggle-switch__mini.active span::before {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.cmn-toggle-switch__mini.active span::after {
+  bottom: 0;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.cmn-toggle-switch__mini.active span::before,
+.cmn-toggle-switch__mini.active span::after {
+  -webkit-transition-delay: 0, 0.3s;
+          transition-delay: 0, 0.3s;
+}
+
+
+
+
+/**
+ * Style 3
+ *
+ * Hamburger to left-arrow (htla). Hamburger menu transforms to a left-pointing
+ * arrow. Usually indicates an off canvas menu sliding in from left that
+ * will be close on re-click of the icon.
+ */
+
+
+.cmn-toggle-switch__htla {
+  background-color: #32dc64;
+  background-color: #166888;
+}
+
+.cmn-toggle-switch__htla span {
+  -webkit-transition: -webkit-transform 0.3s;
+          transition: transform 0.3s;
+}
+
+.cmn-toggle-switch__htla span::before {
+  -webkit-transform-origin: top right;
+      -ms-transform-origin: top right;
+          transform-origin: top right;
+  -webkit-transition: -webkit-transform 0.3s, width 0.3s, top 0.3s;
+          transition: transform 0.3s, width 0.3s, top 0.3s;
+}
+
+.cmn-toggle-switch__htla span::after {
+  -webkit-transform-origin: bottom right;
+      -ms-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transition: -webkit-transform 0.3s, width 0.3s, bottom 0.3s;
+          transition: transform 0.3s, width 0.3s, bottom 0.3s;
+}
+
+/* active state, i.e. menu open */
+.cmn-toggle-switch__htla:hover,
+.cmn-toggle-switch__htla.active {
+  background-color: #18903c;
+  background-color: #28aadc;
+}
+
+.cmn-toggle-switch__htla.active span {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.cmn-toggle-switch__htla.active span::before,
+.cmn-toggle-switch__htla.active span::after {
+  width: 50%;
+  left: -19px;
+}
+
+.cmn-toggle-switch__htla.active span::before {
+  top: 0;
+  -webkit-transform: translateX(42px) translateY(3px) rotate(45deg);
+      -ms-transform: translateX(42px) translateY(3px) rotate(45deg);
+          transform: translateX(42px) translateY(3px) rotate(45deg);
+}
+
+.cmn-toggle-switch__htla.active span::after {
+  bottom: -1px;
+  -webkit-transform: translateX(42px) translateY(-3px) rotate(-45deg);
+      -ms-transform: translateX(42px) translateY(-3px) rotate(-45deg);
+          transform: translateX(42px) translateY(-3px) rotate(-45deg);
+}
+
+/**
+ * Style 4
+ *
+ * Hamburger to right-arrow (htra). Hamburger menu transforms to a
+ * right-pointing arrow. Usually indicates an off canvas menu sliding in from 
+ * right that will be close on re-click of the icon.
+ * /
+.cmn-toggle-switch__htra {
+  background-color: #ff9650;
+}
+
+.cmn-toggle-switch__htra span {
+  -webkit-transition: -webkit-transform 0.3s;
+          transition: transform 0.3s;
+}
+
+.cmn-toggle-switch__htra span::before {
+  -webkit-transform-origin: top left;
+      -ms-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transition: -webkit-transform 0.3s, width 0.3s, top 0.3s;
+          transition: transform 0.3s, width 0.3s, top 0.3s;
+}
+
+.cmn-toggle-switch__htra span::after {
+  -webkit-transform-origin: bottom left;
+      -ms-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transition: -webkit-transform 0.3s, width 0.3s, bottom 0.3s;
+          transition: transform 0.3s, width 0.3s, bottom 0.3s;
+}
+
+/* active state, i.e. menu open * /
+.cmn-toggle-switch__htra.active {
+  background-color: #e95d00;
+}
+
+.cmn-toggle-switch__htra.active span {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.cmn-toggle-switch__htra.active span::before,
+.cmn-toggle-switch__htra.active span::after {
+  width: 50%;
+}
+
+.cmn-toggle-switch__htra.active span::before {
+  top: 0;
+  -webkit-transform: translateX(-6px) translateY(3px) rotate(-45deg);
+      -ms-transform: translateX(-6px) translateY(3px) rotate(-45deg);
+          transform: translateX(-6px) translateY(3px) rotate(-45deg);
+}
+
+.cmn-toggle-switch__htra.active span::after {
+  bottom: 0;
+  -webkit-transform: translateX(-6px) translateY(-3px) rotate(45deg);
+      -ms-transform: translateX(-6px) translateY(-3px) rotate(45deg);
+          transform: translateX(-6px) translateY(-3px) rotate(45deg);
+}
+
+/* ... */
